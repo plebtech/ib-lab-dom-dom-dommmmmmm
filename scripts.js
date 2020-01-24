@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', onLoad());
 
 // function called by DOMContentLoaded listener.
 function onLoad() {
-    // makeAlertDiv();
     makeAddSquareButton();
     makeFlexContainer();
 }
