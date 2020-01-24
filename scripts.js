@@ -56,7 +56,6 @@ function randomColor(e) {
 // collection of all listeners for the black squares.
 function listenSquare(square) {
     square.addEventListener('mouseover', function () {
-        let id = document.createTextNode(square.id);
         square.textContent = square.id;
     });
     square.addEventListener('mouseout', function () {
