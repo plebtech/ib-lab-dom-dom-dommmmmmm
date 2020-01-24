@@ -33,16 +33,26 @@ function listenAddSquare(btn) {
         divBlackSquare.id = blackBoxCounter;
         blackBoxCounter++;
         document.querySelector('.flex-container').appendChild(divBlackSquare);
-        listenSquareHover(divBlackSquare);
+        listenSquare(divBlackSquare);
     });
 }
 
-function listenSquareHover(square) {
+// random color function.
+let colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'black', 'grey'];
+function randomColor(e) {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+
+function listenSquare(square) {
     square.addEventListener('mouseover', function() {
         let id = document.createTextNode(square.id);
         square.textContent = square.id;
     });
     square.addEventListener('mouseout', function() {
         square.textContent = '';
+    });
+    square.addEventListener('click', function() {
+        square.style.backgroundColor = randomColor();
     });
 }
