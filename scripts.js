@@ -1,6 +1,6 @@
 // listener for DOM content loaded.
 // browser fully loads HTML, then script executes.
-document.addEventListener("DOMContentLoaded", onLoad());
+document.addEventListener('DOMContentLoaded', onLoad());
 
 // function called by DOMContentLoaded listener.
 function onLoad() {
@@ -26,12 +26,23 @@ function makeFlexContainer() {
 
 // makes black boxes.
 function listenAddSquare(btn) {
-    let blackBoxCounter = 1;
-    btn.addEventListener("click", function () {
+    let blackBoxCounter = 0;
+    btn.addEventListener('click', function () {
         let divBlackSquare = document.createElement('div');
         divBlackSquare.classList.add('black-square');
-        divBlackSquare.id = "bs" + blackBoxCounter;
+        divBlackSquare.id = blackBoxCounter;
         blackBoxCounter++;
         document.querySelector('.flex-container').appendChild(divBlackSquare);
+        listenSquareHover(divBlackSquare);
+    });
+}
+
+function listenSquareHover(square) {
+    square.addEventListener('mouseover', function() {
+        let id = document.createTextNode(square.id);
+        square.textContent = square.id;
+    });
+    square.addEventListener('mouseout', function() {
+        square.textContent = '';
     });
 }

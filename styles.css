@@ -1,6 +1,7 @@
 .flex-container {
     display: flex;
     flex-flow: wrap row;
+    /* justify-content: space-between; */
 }
 
 .black-square {
@@ -9,4 +10,10 @@
     margin: 1%;
     padding: 1%;
     background-color: black;
+    color: white;
+    display: flex;
+    font-size: 3em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
 }
